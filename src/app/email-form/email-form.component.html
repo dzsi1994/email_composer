@@ -1,0 +1,22 @@
+<form [formGroup]="emailForm" (ngSubmit)="handleSubmit(emailForm.value);" novalidate>
+  <div class="input-group mb-3">
+    <input type="text" placeholder="To" formControlName="to" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  </div>
+  <div class="input-group mb-3">
+    <input type="text" placeholder="CC" formControlName="cc" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  </div>
+  <div class="input-group mb-3">
+    <input type="text" placeholder="BCC" formControlName="bcc" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  </div>
+  <div class="input-group mb-3">
+    <input type="text" placeholder="Subject" formControlName="subject" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  </div>
+  <div class="input-group">
+    <textarea class="form-control" placeholder="Message" formControlName="message" aria-label="With textarea"></textarea>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="pull-right" [disabled]="!emailForm.valid" type="Submit">Send</button>
+    </div>
+  </div>
+</form>
