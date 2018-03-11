@@ -3,4 +3,45 @@ button:disabled {
 }
 button {
     cursor: pointer;
+    box-sizing: border-box;
+    height: 42px;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    line-height: 42px;
+    border: 0;
+    width: 110px;
+    border-radius: 24px;
+    font-size: 18px;
+    background-color: #dedede;
+    text-transform: capitalize;
+    color: rgba(0,0,0,.87);
+    white-space: nowrap;
+    opacity: 0.4;
+    position: relative;
+}
+button i {
+    position: absolute;
+    left: 20px;
+    top: 8px;
+}
+button span {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+}
+textarea {
+    min-height: 136px;
+    border-radius: .25rem!important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* Form validation styles.*/
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+	border: 2px solid red;
+}
+/* add extra 'valid' class to button element if the form is valid */
+button.valid {
+    color:white;
+    background: #21BFEE;
+    cursor: pointer;
+    opacity: 1.0;
 }

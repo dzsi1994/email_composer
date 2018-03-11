@@ -1,0 +1,11 @@
+.circle-icon {
+    background: #E8E8E8;
+    border: 2px solid #9B9C9E;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 62px;
+    vertical-align: middle;
+    padding: 15px;
+}
