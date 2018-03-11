@@ -1,11 +1,21 @@
 <app-success-message></app-success-message>
-<h1>Holiday photos</h1>
-<div>to <span class="emails">dzsi1994@gmail.com</span></div>
+<h4>Holiday photos</h4>
+<div>to
+  <span class="emails" *ngIf="form.to">{{form.to}}</span>
+</div>
 
 <div>
-  <p>
-
+  <p *ngIf="form.message">
+    {{form.message}}
   </p>
 </div>
-<div *ngIf="photos">
+<div *ngIf="form.pictures">
+  <ul>
+    <li *ngFor="let file_src of form.pictures; let i = index">
+      <img [attr.src]='file_src' class="rounded img-thumbnail" alt="photo" />
+    </li>
+  </ul>
 </div>
+<button (click)="navigate()" class="btn btn-default">
+  Send another email
+</button>

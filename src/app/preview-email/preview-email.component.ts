@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ShareServiceService } from '../share-service.service';
+import { ShareService } from '../share-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-preview-email',
@@ -8,13 +9,17 @@ import { ShareServiceService } from '../share-service.service';
 })
 export class PreviewEmailComponent implements OnInit {
   form: any;
-  constructor(private shareService: ShareServiceService) {
-  /*  this.shareService.subscribe( (res: any) => {
-    this.form = res;
-    });*/
+  constructor(private shareService: ShareService, private router: Router) {
    }
 
   ngOnInit() {
+    this.shareService.formData$.subscribe((res:any) => {
+      this.form = res;
+      console.log('form', this.form);
+    });
+  }
+  navigate() {
+    this.router.navigate(['email-form']);
   }
 
 }

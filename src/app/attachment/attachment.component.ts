@@ -11,8 +11,4 @@ export class AttachmentComponent implements OnInit {
 
   ngOnInit() {
   }
-  addFiles() {
-    alert('Add new file');
-  }
-
 }

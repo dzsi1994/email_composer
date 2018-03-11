@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EmailFormComponent } from './email-form/email-form.component';
 import { PreviewEmailComponent } from './preview-email/preview-email.component';
-import { ShareServiceService } from './share-service.service';
+import { ShareService } from './share-service.service';
 import { AttachmentComponent } from './attachment/attachment.component';
 import { SuccessMessageComponent } from './success-message/success-message.component';
+import { AppRoutingModule } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,9 @@ import { SuccessMessageComponent } from './success-message/success-message.compo
     SuccessMessageComponent
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule, FormsModule
+    BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule
   ],
-  providers: [ShareServiceService],
+  providers: [ShareService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

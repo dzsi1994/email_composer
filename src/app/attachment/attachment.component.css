@@ -1,11 +1,20 @@
-.circle-icon {
-    background: #E8E8E8;
-    border: 2px solid #9B9C9E;
-    width: 62px;
-    height: 62px;
+
+ span {
+    display: block;
+    background: white;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    text-align: center;
-    line-height: 62px;
-    vertical-align: middle;
-    padding: 15px;
+    line-height: 52px;
+    color: #BDBEC1;
+    border: 1px solid #F2F2F2;
+    padding: 9px;
+}
+span:hover {
+    border: 1px solid #BDBEC1;
+    cursor: pointer;
+}
+
+span i {
+    font-size: 32px;
 }
