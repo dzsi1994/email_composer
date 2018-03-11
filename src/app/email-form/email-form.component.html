@@ -18,20 +18,24 @@
     <div class="col-sm-12">
       <h3 *ngIf="file_srcs.length">Attached Files</h3>
       <div>
-      <ul>
-        <li *ngFor="let file_src of file_srcs; let i = index" (click)="remove(i)">
-          <img [attr.src]='file_src' class="rounded" id="pics" alt="photo" />
-          <span class="delete">
-              <i class="material-icons">&#xE872;</i>
-          </span>
-        </li>
-      </ul>
-    </div>
+        <ul>
+          <li *ngFor="let file_src of file_srcs; let i = index">
+            <div class="image--item">
+              <img [attr.src]='file_src' class="rounded" id="pics" alt="photo" />
+            </div>  
+              <span class="delete" (click)="remove(i)">
+                <i class="material-icons">&#xE872;</i>
+              </span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-6 text-left">
-      <label for="fileChangeInput"><app-attachment></app-attachment></label>
+      <label for="fileChangeInput">
+        <app-attachment></app-attachment>
+      </label>
       <input type="file" id="fileChangeInput" multiple (change)="fileChange(input)" #input style="display:none;" />
     </div>
     <div class="col-sm-6 text-right">
