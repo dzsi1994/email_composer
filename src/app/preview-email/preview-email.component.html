@@ -1,23 +1,25 @@
 <app-success-message></app-success-message>
 <ng-container *ngIf="form">
-<h4 *ngIf="form.subject">{{form.subject}}</h4>
-<div>to
-  <span class="emails" *ngIf="form.to">{{form.to}}</span>
-</div>
+  <h4 *ngIf="form.subject">{{form.subject}}</h4>
+  <div>to
+    <span class="emails" *ngIf="form.to">{{form.to}}</span>
+  </div>
 
-<div>
-  <p *ngIf="form.message">
-    {{form.message}}
-  </p>
-</div>
-<div *ngIf="form.pictures">
-  <ul>
-    <li *ngFor="let file_src of form.pictures; let i = index">
-      <img [attr.src]='file_src' class="rounded img-thumbnail" alt="photo" />
-    </li>
-  </ul>
-</div>
-<button (click)="navigate()" class="btn btn-default">
-  Send another email
-</button>
+  <div>
+    <p *ngIf="form.message">
+      {{form.message}}
+    </p>
+  </div>
+  <div class="row" *ngIf="form.pictures">
+    <div class="col-sm-12">
+      <ul>
+        <li *ngFor="let file_src of form.pictures; let i = index">
+          <img [attr.src]='file_src' class="rounded img-thumbnail" alt="photo" />
+        </li>
+      </ul>
+    </div>
+  </div>
+  <button (click)="navigate()" class="btn btn-default">
+    Send another email
+  </button>
 </ng-container>
