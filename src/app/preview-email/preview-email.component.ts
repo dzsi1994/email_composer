@@ -15,7 +15,6 @@ export class PreviewEmailComponent implements OnInit {
   ngOnInit() {
     this.shareService.formData$.subscribe((res:any) => {
       this.form = res;
-      console.log('form', this.form);
     });
   }
   navigate() {

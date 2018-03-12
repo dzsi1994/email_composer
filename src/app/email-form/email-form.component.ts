@@ -96,7 +96,6 @@ export class EmailFormComponent implements OnInit {
   resize(img, MAX_WIDTH:number, MAX_HEIGHT:number, callback){
     // This will wait until the img is loaded before calling this function
     return img.onload = () => {
-      console.log("img loaded");
       // Get the images current width and height
       var width = img.width;
       var height = img.height;

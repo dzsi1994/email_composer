@@ -1,5 +1,6 @@
 <app-success-message></app-success-message>
-<h4>Holiday photos</h4>
+<ng-container *ngIf="form">
+<h4 *ngIf="form.subject">{{form.subject}}</h4>
 <div>to
   <span class="emails" *ngIf="form.to">{{form.to}}</span>
 </div>
@@ -19,3 +20,4 @@
 <button (click)="navigate()" class="btn btn-default">
   Send another email
 </button>
+</ng-container>
