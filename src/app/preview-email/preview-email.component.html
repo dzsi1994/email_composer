@@ -14,7 +14,9 @@
     <div class="col-sm-12">
       <ul>
         <li *ngFor="let file_src of form.pictures; let i = index">
-          <img [attr.src]='file_src' class="rounded img-thumbnail" alt="photo" />
+          <div class="image--item">
+            <img [attr.src]='file_src' class="img-rounded" alt="photo" width="155" height="115" />
+          </div>
         </li>
       </ul>
     </div>

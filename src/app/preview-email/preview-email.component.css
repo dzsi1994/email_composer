@@ -2,6 +2,9 @@
   color: #21BFEE;
 }
 
+.row {
+  padding-top: 20px;
+}
 ul li {
   float: left;
   list-style: none;
