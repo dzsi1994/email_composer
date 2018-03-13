@@ -1,16 +1,15 @@
+@import '~sass/variables';
+@import '~sass/mixins';
 .text-center {
   text-align: center !important;
   padding: 10px 0;
   span {
     display: block;
-    background: #4bd49c;
-    /* border: 2px solid #9B9C9E; */
-    width: 62px;
-    height: 62px;
-    border-radius: 50%;
+    background: $success;
+    @include border-radius(50%);
+    @include spanForIcon(62px, 62px);
     text-align: center;
-    line-height: 62px;
-    color: white;
+    color: $white;
     padding: 8px;
     margin: 8px auto;
     i {

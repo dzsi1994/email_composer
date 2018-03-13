@@ -1,0 +1,47 @@
+@mixin center {
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+@mixin flex {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+}
+@mixin _list_style {
+  float: left;
+  list-style: none;
+  position: relative;
+}
+@mixin border-radius($r) {
+  border-radius: $r;
+  -webkit-border-radius: $r;
+  -moz-border-radius: $r;
+  -ms-border-radius: $r;
+  -o-border-radius: $r;
+}
+@mixin absolute($type, $top, $right, $bottom, $left) {
+  position: $type;
+  top: $top;
+  right: $right;
+  left: $left;
+  bottom: $bottom;
+}
+@mixin spanForIcon($width, $px) {
+  width: $width;
+  height: $px;
+  line-height: $px;
+}
+@mixin border($px, $type, $color) {
+  border: $px $type $color;
+}
+@mixin opacity($opacity) {
+  @if $opacity {
+    opacity: 1;
+  } @else {
+    opacity: 0;
+  }
+}
