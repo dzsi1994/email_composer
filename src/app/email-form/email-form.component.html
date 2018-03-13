@@ -19,7 +19,7 @@
       <h3>Attached Files</h3>
       <div class="image--item" id="item" *ngFor="let file_src of file_srcs; let i = index">
         <img [attr.src]='file_src' (click)="remove(i)" class="img-rounded" alt="photo" width="155" height="115" />
-        <span class="delete">
+        <span class="delete" (click)="remove(i)">
           <i class="material-icons">&#xE872;</i>
         </span>
       </div>

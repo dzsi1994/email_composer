@@ -59,12 +59,7 @@ export class EmailFormComponent implements OnInit {
   }
   // remove preview from dom
   remove(i: any) {
-    console.log('filetype ', typeof this.file_srcs);
-    console.log('filesList ', this.file_srcs);
-    let index = this.file_srcs.indexOf(i);
     this.file_srcs.splice(i, 1);
-    console.log('filesList ', this.file_srcs);
-    //this.file_srcs.filter(e => e !== i);
   }
 
   readFile(file, reader, callback) {
