@@ -1,10 +1,9 @@
 .text-center {
-text-align: center!important;
-padding: 10px 0;
-}
-.text-center span {
+  text-align: center !important;
+  padding: 10px 0;
+  span {
     display: block;
-    background: #4BD49C;
+    background: #4bd49c;
     /* border: 2px solid #9B9C9E; */
     width: 62px;
     height: 62px;
@@ -14,10 +13,11 @@ padding: 10px 0;
     color: white;
     padding: 8px;
     margin: 8px auto;
-}
-.text-center span i {
-    font-size: 50px;
+    i {
+      font-size: 50px;
+    }
+  }
 }
 hr {
-    padding: 10px 0;
+  padding: 10px 0;
 }
