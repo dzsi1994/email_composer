@@ -1,7 +1,8 @@
+@import '~sass/variables';
+@import '~sass/mixins';
 .emails {
-  color: #21bfee;
+  color: $valid-submit;
 }
-
 .row {
   padding-top: 20px;
 }
@@ -12,7 +13,7 @@ ul li {
   .image--item {
     margin-top: 10px;
     img {
-      border-radius: 6px;
+      @include border-radius(6px);
       margin-right: 10px;
     }
   }

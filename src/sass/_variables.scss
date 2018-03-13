@@ -4,7 +4,16 @@
 
 // Color swatches
 
-$white: white;
+$white: #fff;
 $valid-submit: #21bfee;
 $red: #e74c3c;
 $success: #4bd49c;
+$navbar-default-color: #094358;
+
+$font-family-base: 'Open Sans Condensed', 'Open Sans', Helvetica, Arial,
+  sans-serif;
+$font-family-demo: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
+$font-family-narrow: 'Open Sans Condensed', 'Open Sans', Helvetica;
+$font-size-base: 18px;
+// add padding variables
