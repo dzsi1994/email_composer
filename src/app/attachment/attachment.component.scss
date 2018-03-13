@@ -1,20 +1,19 @@
+@import '~sass/variables';
+@import '~sass/mixins';
 
- span {
-    display: block;
-    background: white;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    line-height: 52px;
-    color: #BDBEC1;
-    border: 1px solid #F2F2F2;
-    padding: 9px;
-}
-span:hover {
-    border: 1px solid #BDBEC1;
+span {
+  display: block;
+  background: $white;
+  @include spanForIcon(52px, 52px);
+  @include border-radius(50%);
+  @include border(1px, solid, #f2f2f2);
+  color: #bdbec1;
+  padding: 9px;
+  &:hover {
+    @include border(1px, solid, #bdbec1);
     cursor: pointer;
-}
-
-span i {
+  }
+  i {
     font-size: 32px;
+  }
 }
