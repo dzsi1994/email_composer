@@ -30,7 +30,9 @@
       <label for="fileChangeInput">
         <app-attachment></app-attachment>
       </label>
-      <input type="file" id="fileChangeInput" multiple (change)="fileChange(input)" #input style="display:none;" />
+      <input type="file" formControlName="file" id="fileChangeInput" multiple (change)="fileChange(input)" #input style="display:none;"
+      />
+      <!--<input type="file" id="fileChangeInput" multiple (change)="fileChange($event)" style="display:none;" /> -->
     </div>
     <div class="col-sm-6 text-right">
       <button [disabled]="!emailForm.valid" [ngClass]="{'valid':emailForm.valid}" type="Submit">

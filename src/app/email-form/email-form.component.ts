@@ -40,7 +40,8 @@ export class EmailFormComponent implements OnInit {
         null,
         Validators.compose([Validators.required, Validators.maxLength(100)])
       ],
-      message: [null, Validators.required]
+      message: [null, Validators.required],
+      file: ''
     });
   }
   handleSubmit(emailForm: any) {
@@ -59,6 +60,10 @@ export class EmailFormComponent implements OnInit {
   }
   // remove preview from dom
   remove(i: any) {
+    this.emailForm.patchValue({
+      file: ''
+    });
+    console.log(this.file_srcs.indexOf(i));
     this.file_srcs.splice(i, 1);
   }
 
@@ -76,30 +81,31 @@ export class EmailFormComponent implements OnInit {
   readFiles(files, index = 0) {
     // Create the file reader
     const reader = new FileReader();
-
     // If there is a file
-    if (index in files) {
-      // Start reading this file
-      this.readFile(files[index], reader, result => {
-        // Create an img element and add the image file data to it
-        const img = document.createElement('img');
-        img.src = result;
+    // move to bttom add index + 1
 
-        // Send this img to the resize function (and wait for callback)
-        this.resize(img, 250, 250, (resized_jpeg, before, after) => {
-          // Add the resized jpeg img source to a list for preview
-          // This is also the file you want to upload. (either as a
-          // base64 string or img.src = resized_jpeg if you prefer a file).
-          this.file_srcs.push(resized_jpeg);
+    // Start reading this file
+    this.readFile(files[index], reader, result => {
+      // Create an img element and add the image file data to it
+      const img = document.createElement('img');
+      img.src = result;
 
+      // Send this img to the resize function (and wait for callback)
+      this.resize(img, 250, 250, (resized_jpeg, before, after) => {
+        // Add the resized jpeg img source to a list for preview
+        // This is also the file you want to upload. (either as a
+        // base64 string or img.src = resized_jpeg if you prefer a file).
+        this.file_srcs.push(resized_jpeg);
+        if (index++ in files) {
           // Read the next file;
-          this.readFiles(files, index + 1);
-        });
+          this.readFiles(files, index);
+        }
       });
-    } else {
+    });
+    /* else {
       // When all files are done This forces a change detection
       this.changeDetectorRef.detectChanges();
-    }
+    }*/
   }
 
   resize(img, MAX_WIDTH: number, MAX_HEIGHT: number, callback) {
