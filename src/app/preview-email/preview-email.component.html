@@ -4,7 +4,6 @@
   <div>to
     <span class="emails" *ngIf="form.to">{{form.to}}</span>
   </div>
-
   <div>
     <p *ngIf="form.message">
       {{form.message}}
@@ -12,16 +11,12 @@
   </div>
   <div class="row" *ngIf="form.pictures">
     <div class="col-sm-12">
-      <ul>
-        <li *ngFor="let file_src of form.pictures; let i = index">
-          <div class="image--item">
-            <img [attr.src]='file_src' class="img-rounded" alt="photo" width="155" height="115" />
-          </div>
-        </li>
-      </ul>
+      <div class="image--item" id="item" *ngFor="let file_src of form.pictures; let i = index">
+        <img [attr.src]='file_src' class="img-rounded" alt="photo" width="155" height="115" />
+      </div>
     </div>
   </div>
-  <button (click)="navigate()" class="btn btn-default">
-    Send another email
-  </button>
 </ng-container>
+<button (click)="navigate()" class="btn btn-default">
+  Send another email
+</button>

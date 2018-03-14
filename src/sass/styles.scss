@@ -1,3 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 @import './variables';
 @import './mixins';
+
+.image--item {
+  margin-top: 10px;
+  display: inline-block;
+  position: relative;
+  img {
+    @include border-radius(6px);
+    margin-right: 10px;
+  }
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
+
+.delete {
+  position: absolute;
+  display: block;
+  top: 33px;
+  left: 52px;
+  background: #949599;
+  @include spanForIcon(48px, 48px);
+  @include border-radius(50%);
+  color: $white;
+  padding: 8px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  &:hover {
+    opacity: 1;
+  }
+  i {
+    font-size: 32px;
+  }
+}
+
+.image--item img:hover + .delete {
+  opacity: 1;
+}

@@ -3,18 +3,3 @@
 .emails {
   color: $valid-submit;
 }
-.row {
-  padding-top: 20px;
-}
-ul li {
-  float: left;
-  list-style: none;
-  position: relative;
-  .image--item {
-    margin-top: 10px;
-    img {
-      @include border-radius(6px);
-      margin-right: 10px;
-    }
-  }
-}

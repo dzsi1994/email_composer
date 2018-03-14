@@ -15,7 +15,7 @@ button {
   opacity: 0.4;
   position: relative;
   outline: none;
-  /* add extra 'valid' class to button element if the form is valid */
+
   i {
     position: absolute;
     left: 20px;
@@ -27,11 +27,13 @@ button {
     right: 20px;
   }
 }
+// used cursor type for invalid form
 :disabled {
   cursor: not-allowed;
 }
+/* add extra 'valid' class to button element if the form is valid */
 .valid {
-  color: white;
+  color: $white;
   background: $valid-submit;
   cursor: pointer;
   opacity: 1;
@@ -39,7 +41,7 @@ button {
 
 textarea {
   min-height: 156px;
-  border-radius: 0.25rem !important;
+  @include border-radius(0.25rem !important);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   resize: none;
 }
@@ -47,58 +49,9 @@ textarea {
 /* Form validation styles.*/
 input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
-  border: 2px solid red;
+  @include border(2px, solid, $red);
 }
 
 .row {
   padding-top: 20px;
-}
-
-ul li {
-  float: left;
-  list-style: none;
-  position: relative;
-}
-
-.image--item {
-  margin-top: 10px;
-  display: inline-block;
-  position: relative;
-}
-
-.image--item img {
-  @include border-radius(6px);
-  margin-right: 10px;
-}
-
-.image--item:hover img {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-.delete {
-  position: absolute;
-  display: block;
-  top: 33px;
-  left: 52px;
-  background: #949599;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  line-height: 48px;
-  color: $white;
-  padding: 8px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-  &:hover {
-    opacity: 1;
-  }
-  i {
-    font-size: 32px;
-  }
-}
-
-.image--item img:hover + .delete {
-  opacity: 1;
 }
