@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class EmailFormComponent implements OnInit {
   emailForm: FormGroup;
-  element: HTMLImageElement;
   emailPattern: any;
   file_srcs: string[] = [];
   constructor(
@@ -63,7 +62,6 @@ export class EmailFormComponent implements OnInit {
     this.emailForm.patchValue({
       file: ''
     });
-    console.log(this.file_srcs.indexOf(i));
     this.file_srcs.splice(i, 1);
   }
 
@@ -81,31 +79,30 @@ export class EmailFormComponent implements OnInit {
   readFiles(files, index = 0) {
     // Create the file reader
     const reader = new FileReader();
+
     // If there is a file
-    // move to bttom add index + 1
+    if (index in files) {
+      // Start reading this file
+      this.readFile(files[index], reader, result => {
+        // Create an img element and add the image file data to it
+        const img = document.createElement('img');
+        img.src = result;
 
-    // Start reading this file
-    this.readFile(files[index], reader, result => {
-      // Create an img element and add the image file data to it
-      const img = document.createElement('img');
-      img.src = result;
+        // Send this img to the resize function (and wait for callback)
+        this.resize(img, 250, 250, (resized_jpeg, before, after) => {
+          // Add the resized jpeg img source to a list for preview
+          // This is also the file you want to upload. (either as a
+          // base64 string or img.src = resized_jpeg if you prefer a file).
+          this.file_srcs.push(resized_jpeg);
 
-      // Send this img to the resize function (and wait for callback)
-      this.resize(img, 250, 250, (resized_jpeg, before, after) => {
-        // Add the resized jpeg img source to a list for preview
-        // This is also the file you want to upload. (either as a
-        // base64 string or img.src = resized_jpeg if you prefer a file).
-        this.file_srcs.push(resized_jpeg);
-        if (index++ in files) {
           // Read the next file;
-          this.readFiles(files, index);
-        }
+          this.readFiles(files, index + 1);
+        });
       });
-    });
-    /* else {
+    } else {
       // When all files are done This forces a change detection
       this.changeDetectorRef.detectChanges();
-    }*/
+    }
   }
 
   resize(img, MAX_WIDTH: number, MAX_HEIGHT: number, callback) {

@@ -3,3 +3,19 @@
 .emails {
   color: $valid-submit;
 }
+.image--item {
+  margin-top: 10px;
+  display: inline-block;
+  position: relative;
+  img {
+    @include border-radius(6px);
+    margin-right: 10px;
+  }
+  &:hover {
+    opacity: 1;
+    cursor: default;
+  }
+}
+.top {
+  margin-top: 20px;
+}

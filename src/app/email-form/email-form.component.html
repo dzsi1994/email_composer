@@ -18,7 +18,7 @@
     <div class="col-sm-12">
       <h3>Attached Files</h3>
       <div class="image--item" id="item" *ngFor="let file_src of file_srcs; let i = index">
-        <img [attr.src]='file_src' (click)="remove(i)" class="img-rounded" alt="photo" width="155" height="115" />
+        <img [attr.src]='file_src' (click)="remove(i)" class="img-rounded" alt="photo" width="125" height="125" />
         <span class="delete" (click)="remove(i)">
           <i class="material-icons">&#xE872;</i>
         </span>
@@ -32,7 +32,6 @@
       </label>
       <input type="file" formControlName="file" id="fileChangeInput" multiple (change)="fileChange(input)" #input style="display:none;"
       />
-      <!--<input type="file" id="fileChangeInput" multiple (change)="fileChange($event)" style="display:none;" /> -->
     </div>
     <div class="col-sm-6 text-right">
       <button [disabled]="!emailForm.valid" [ngClass]="{'valid':emailForm.valid}" type="Submit">
