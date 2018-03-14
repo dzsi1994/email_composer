@@ -2,27 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
-## Development server
+## Project Set up
+First clone the repository and then go to the folder called email_composer and run npm i.
+If you do not have installed node.js on your device please installed it from here: https://nodejs.org/en/download/
+Please make sure you dowload and install the same as your OS.
+## How to run development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng s` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. 
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+I personally recommend running `ng s -o` and the application will automatically open in the default browser. 
